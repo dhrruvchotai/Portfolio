@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface NavbarProps {
   activeSection: string;
@@ -11,7 +12,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
     { id: 'home', label: 'Home' },
     { id: 'tech', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'journey', label: 'Journey' },
+    { id: 'journey', label: 'Experience' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -23,7 +24,6 @@ const Navbar = ({ activeSection }: NavbarProps) => {
   };
 
   const handleResumeClick = () => {
-    // This would open the resume PDF
     window.open('/resume.pdf', '_blank');
   };
 
@@ -66,13 +66,16 @@ const Navbar = ({ activeSection }: NavbarProps) => {
             ))}
           </div>
           
-          <Button
-            onClick={handleResumeClick}
-            variant="outline"
-            className="hidden md:block"
-          >
-            Resume
-          </Button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Button
+              onClick={handleResumeClick}
+              variant="outline"
+              className="hidden md:block"
+            >
+              Resume
+            </Button>
+          </div>
         </div>
       </div>
     </motion.nav>

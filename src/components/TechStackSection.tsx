@@ -1,28 +1,33 @@
 
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
+import { Code, Database, Wrench, Globe } from 'lucide-react';
 
 const TechStackSection = () => {
   const techStacks = [
     {
       category: 'Languages',
       technologies: ['JavaScript', 'Java', 'C', 'Python', 'Dart'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      icon: Code
     },
     {
       category: 'Frameworks & Libraries',
       technologies: ['Flutter', 'React.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      icon: Globe
     },
     {
       category: 'Databases',
       technologies: ['MongoDB', 'MS SQL Server', 'Firebase'],
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      icon: Database
     },
     {
       category: 'Tools & Others',
       technologies: ['Git', 'GitHub', 'DSA', 'Algorithms', 'Problem Solving'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      icon: Wrench
     }
   ];
 
@@ -58,7 +63,7 @@ const TechStackSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Tech <span className="text-gradient">Stack</span>
+            Technical <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Technologies I work with to bring ideas to life
@@ -76,9 +81,7 @@ const TechStackSection = () => {
             <motion.div key={index} variants={itemVariants}>
               <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 border border-border/50 backdrop-blur-sm">
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stack.color} mb-4 flex items-center justify-center`}>
-                  <span className="text-white font-bold text-lg">
-                    {stack.category[0]}
-                  </span>
+                  <stack.icon className="text-white" size={24} />
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-4 text-foreground">

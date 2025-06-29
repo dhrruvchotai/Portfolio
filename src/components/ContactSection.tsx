@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, MapPin, Mail } from 'lucide-react';
 import { useState } from 'react';
 
 const ContactSection = () => {
@@ -23,9 +23,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -33,12 +31,12 @@ const ContactSection = () => {
     {
       label: 'Location',
       value: 'Rajkot, Gujarat, India',
-      icon: '📍'
+      icon: MapPin
     },
     {
       label: 'Email',
       value: 'hey.dhruvchotai@gmail.com',
-      icon: '📧',
+      icon: Mail,
       link: 'mailto:hey.dhruvchotai@gmail.com'
     }
   ];
@@ -75,7 +73,6 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,7 +91,9 @@ const ContactSection = () => {
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="text-2xl">{info.icon}</span>
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <info.icon className="text-primary" size={20} />
+                  </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{info.label}</p>
                     {info.link ? (
@@ -129,7 +128,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -185,7 +183,6 @@ const ContactSection = () => {
           </motion.div>
         </div>
 
-        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -194,7 +191,7 @@ const ContactSection = () => {
           className="text-center mt-16 pt-8 border-t border-border"
         >
           <p className="text-muted-foreground">
-            © 2024 Dhruv Chotai. Built with React, Framer Motion, and lots of ☕
+            © 2024 Dhruv Chotai. Built with React, Framer Motion, and passion for development
           </p>
         </motion.div>
       </div>

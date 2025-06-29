@@ -12,7 +12,6 @@ const HeroSection = () => {
   };
 
   const downloadResume = () => {
-    // This would trigger resume download
     window.open('/resume.pdf', '_blank');
   };
 
@@ -24,21 +23,13 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="text-6xl md:text-8xl mb-4"
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-          >
-            👋
-          </motion.div>
-          
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hi, I'm{' '}
+            Hello, I'm{' '}
             <span className="text-gradient">Dhruv Chotai</span>
           </motion.h1>
           

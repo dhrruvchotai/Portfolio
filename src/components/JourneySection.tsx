@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
+import { GraduationCap, Briefcase, Award } from 'lucide-react';
 
 const JourneySection = () => {
   const journeyItems = [
@@ -9,7 +10,7 @@ const JourneySection = () => {
       title: 'B.Tech in Computer Science Engineering',
       institution: 'Darshan University',
       description: 'Currently pursuing Computer Science Engineering with a CGPA of 9.06. Actively involved in coding competitions and technical projects.',
-      icon: '🎓',
+      icon: GraduationCap,
       type: 'education'
     },
     {
@@ -17,7 +18,7 @@ const JourneySection = () => {
       title: 'DSA Teaching Assistant',
       institution: 'Darshan University',
       description: 'Teaching Data Structures and Algorithms to 120+ students, helping them understand complex concepts and problem-solving techniques.',
-      icon: '👨‍🏫',
+      icon: Briefcase,
       type: 'experience'
     },
     {
@@ -25,7 +26,7 @@ const JourneySection = () => {
       title: 'Flutter Developer Intern',
       institution: 'Digital Guruji',
       description: 'Developed the Tone Generator App using Flutter, gaining hands-on experience in mobile app development and audio processing.',
-      icon: '💼',
+      icon: Briefcase,
       type: 'experience'
     },
     {
@@ -33,7 +34,7 @@ const JourneySection = () => {
       title: 'Hackathon Winner',
       institution: 'ADAA Jaipur',
       description: 'Built an E-commerce Clothing Website during a hackathon using the MERN stack, showcasing full-stack development skills.',
-      icon: '🏆',
+      icon: Award,
       type: 'achievement'
     }
   ];
@@ -70,10 +71,10 @@ const JourneySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="text-gradient">Journey</span>
+            Professional <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The path that led me to where I am today
+            My journey in software development and education
           </p>
         </motion.div>
 
@@ -84,7 +85,6 @@ const JourneySection = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          {/* Timeline line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 hidden md:block" />
 
           {journeyItems.map((item, index) => (
@@ -93,18 +93,13 @@ const JourneySection = () => {
               variants={itemVariants}
               className="relative flex items-start mb-12 md:mb-16"
             >
-              {/* Timeline dot */}
               <div className="hidden md:flex absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 z-10 -translate-x-1/2" />
               
               <Card className="flex-1 md:ml-16 p-6 hover:shadow-xl transition-all duration-300 border border-border/50 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
-                  <motion.div
-                    className="text-4xl"
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
-                  >
-                    {item.icon}
-                  </motion.div>
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <item.icon className="text-primary" size={24} />
+                  </div>
                   
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
