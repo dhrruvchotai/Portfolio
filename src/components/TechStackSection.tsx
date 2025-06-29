@@ -1,33 +1,48 @@
 
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
-import { Code, Database, Wrench, Globe } from 'lucide-react';
 
 const TechStackSection = () => {
-  const techStacks = [
+  const skills = [
     {
-      category: 'Languages',
-      technologies: ['JavaScript', 'Java', 'C', 'Python', 'Dart'],
-      color: 'from-blue-500 to-cyan-500',
-      icon: Code
+      category: 'Programming Languages',
+      items: [
+        { name: 'JavaScript', level: 90 },
+        { name: 'Java', level: 85 },
+        { name: 'Python', level: 80 },
+        { name: 'Dart', level: 88 },
+        { name: 'C', level: 75 }
+      ]
     },
     {
-      category: 'Frameworks & Libraries',
-      technologies: ['Flutter', 'React.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-      color: 'from-purple-500 to-pink-500',
-      icon: Globe
+      category: 'Frontend Development',
+      items: [
+        { name: 'React.js', level: 85 },
+        { name: 'Flutter', level: 90 },
+        { name: 'HTML/CSS', level: 88 },
+        { name: 'Tailwind CSS', level: 85 },
+        { name: 'Framer Motion', level: 80 }
+      ]
     },
     {
-      category: 'Databases',
-      technologies: ['MongoDB', 'MS SQL Server', 'Firebase'],
-      color: 'from-green-500 to-emerald-500',
-      icon: Database
+      category: 'Backend Development',
+      items: [
+        { name: 'Node.js', level: 82 },
+        { name: 'Express.js', level: 80 },
+        { name: 'MongoDB', level: 78 },
+        { name: 'MS SQL Server', level: 75 },
+        { name: 'Firebase', level: 85 }
+      ]
     },
     {
-      category: 'Tools & Others',
-      technologies: ['Git', 'GitHub', 'DSA', 'Algorithms', 'Problem Solving'],
-      color: 'from-orange-500 to-red-500',
-      icon: Wrench
+      category: 'Tools & Technologies',
+      items: [
+        { name: 'Git & GitHub', level: 88 },
+        { name: 'Data Structures & Algorithms', level: 85 },
+        { name: 'Problem Solving', level: 90 },
+        { name: 'API Development', level: 80 },
+        { name: 'Package Development', level: 75 }
+      ]
     }
   ];
 
@@ -36,18 +51,18 @@ const TechStackSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        duration: 0.5
       }
     }
   };
@@ -63,10 +78,10 @@ const TechStackSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Technical <span className="text-gradient">Skills</span>
+            Technical <span className="text-gradient">Expertise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Technologies I work with to bring ideas to life
+            Comprehensive skill set across modern development technologies
           </p>
         </motion.div>
 
@@ -75,29 +90,35 @@ const TechStackSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {techStacks.map((stack, index) => (
+          {skills.map((skillGroup, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 border border-border/50 backdrop-blur-sm">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stack.color} mb-4 flex items-center justify-center`}>
-                  <stack.icon className="text-white" size={24} />
-                </div>
-                
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
-                  {stack.category}
+              <Card className="p-8 h-full border border-border/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                <h3 className="text-2xl font-semibold mb-6 text-foreground border-b border-border/20 pb-3">
+                  {skillGroup.category}
                 </h3>
-                
-                <div className="flex flex-wrap gap-2">
-                  {stack.technologies.map((tech, techIndex) => (
-                    <motion.span
-                      key={techIndex}
-                      className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
-                      whileHover={{ scale: 1.05, backgroundColor: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {tech}
-                    </motion.span>
+                <div className="space-y-4">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-foreground">
+                          {skill.name}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-2">
+                        <motion.div
+                          className="bg-gradient-to-r from-primary to-primary/80 h-2 rounded-full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </Card>
