@@ -18,7 +18,7 @@ const ProjectsSection = () => {
       year: '2024',
       category: 'Mobile Application',
       link: null,
-      github: '#'
+      github: null
     },
     {
       title: 'NoCodeAPIConnector Package',
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
       year: '2024',
       category: 'Open Source Package',
       link: null,
-      github: '#'
+      github: null
     },
     {
       title: 'E-commerce Clothing Platform',
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
       year: '2024',
       category: 'Web Application',
       link: null,
-      github: '#'
+      github: null
     },
     {
       title: 'Interactive Flip Memory Game',
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
       year: '2023',
       category: 'Web Game',
       link: 'https://dugames.aswdc.in/FlipGame/index.html',
-      github: '#'
+      github: null
     },
     {
       title: 'Tic Tac Toe Multiplayer',
@@ -69,16 +69,6 @@ const ProjectsSection = () => {
       category: 'AI Application',
       link: null,
       github: 'https://github.com/dhrruvchotai/Friday'
-    },
-    {
-      title: 'Memory Card Challenge',
-      description: 'Interactive memory enhancement game featuring multiple difficulty levels, timer functionality, and progressive scoring system.',
-      tech: ['JavaScript', 'CSS3', 'HTML5', 'Local Storage'],
-      featured: false,
-      year: '2023',
-      category: 'Web Game',
-      link: null,
-      github: '#'
     }
   ];
 
@@ -128,7 +118,7 @@ const ProjectsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
         >
           {displayedProjects.map((project, index) => (
             <motion.div key={`${project.title}-${index}`} variants={itemVariants}>
@@ -169,7 +159,7 @@ const ProjectsSection = () => {
                       Live Demo
                     </Button>
                   )}
-                  {project.github && project.github !== '#' && (
+                  {project.github && (
                     <Button
                       size="sm"
                       variant="outline"

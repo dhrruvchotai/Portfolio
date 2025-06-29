@@ -3,45 +3,45 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 
 const TechStackSection = () => {
-  const skills = [
+  const skillCategories = [
     {
-      category: 'Programming Languages',
-      items: [
-        { name: 'JavaScript', level: 90 },
-        { name: 'Java', level: 85 },
-        { name: 'Python', level: 80 },
-        { name: 'Dart', level: 88 },
-        { name: 'C', level: 75 }
+      title: 'Programming Languages',
+      skills: [
+        'JavaScript',
+        'Java', 
+        'Python',
+        'Dart',
+        'C'
       ]
     },
     {
-      category: 'Frontend Development',
-      items: [
-        { name: 'React.js', level: 85 },
-        { name: 'Flutter', level: 90 },
-        { name: 'HTML/CSS', level: 88 },
-        { name: 'Tailwind CSS', level: 85 },
-        { name: 'Framer Motion', level: 80 }
+      title: 'Frontend Development',
+      skills: [
+        'React.js',
+        'Flutter',
+        'HTML/CSS',
+        'Tailwind CSS',
+        'Framer Motion'
       ]
     },
     {
-      category: 'Backend Development',
-      items: [
-        { name: 'Node.js', level: 82 },
-        { name: 'Express.js', level: 80 },
-        { name: 'MongoDB', level: 78 },
-        { name: 'MS SQL Server', level: 75 },
-        { name: 'Firebase', level: 85 }
+      title: 'Backend Development',
+      skills: [
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'MS SQL Server',
+        'Firebase'
       ]
     },
     {
-      category: 'Tools & Technologies',
-      items: [
-        { name: 'Git & GitHub', level: 88 },
-        { name: 'Data Structures & Algorithms', level: 85 },
-        { name: 'Problem Solving', level: 90 },
-        { name: 'API Development', level: 80 },
-        { name: 'Package Development', level: 75 }
+      title: 'Tools & Technologies',
+      skills: [
+        'Git & GitHub',
+        'Data Structures & Algorithms',
+        'Problem Solving',
+        'API Development',
+        'Package Development'
       ]
     }
   ];
@@ -67,6 +67,17 @@ const TechStackSection = () => {
     }
   };
 
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
   return (
     <section id="tech" className="py-20 px-4">
       <div className="container mx-auto">
@@ -78,10 +89,10 @@ const TechStackSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Technical <span className="text-gradient">Expertise</span>
+            Technical <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive skill set across modern development technologies
+            Comprehensive expertise across modern development technologies
           </p>
         </motion.div>
 
@@ -92,33 +103,24 @@ const TechStackSection = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {skills.map((skillGroup, index) => (
-            <motion.div key={index} variants={itemVariants}>
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div key={categoryIndex} variants={itemVariants}>
               <Card className="p-8 h-full border border-border/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
                 <h3 className="text-2xl font-semibold mb-6 text-foreground border-b border-border/20 pb-3">
-                  {skillGroup.category}
+                  {category.title}
                 </h3>
-                <div className="space-y-4">
-                  {skillGroup.items.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium text-foreground">
-                          {skill.name}
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <motion.div
-                          className="bg-gradient-to-r from-primary to-primary/80 h-2 rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        />
-                      </div>
-                    </div>
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skillIndex}
+                      variants={skillVariants}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2 bg-muted/50 hover:bg-muted/80 rounded-full border border-border/30 transition-all duration-200 cursor-default"
+                    >
+                      <span className="text-sm font-medium text-foreground">
+                        {skill}
+                      </span>
+                    </motion.div>
                   ))}
                 </div>
               </Card>
