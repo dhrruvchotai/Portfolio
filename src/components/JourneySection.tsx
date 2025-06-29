@@ -78,52 +78,56 @@ const JourneySection = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 hidden md:block" />
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 hidden md:block" />
 
-          {journeyItems.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="relative flex items-start mb-12 md:mb-16"
-            >
-              <div className="hidden md:flex absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 z-10 -translate-x-1/2" />
-              
-              <Card className="flex-1 md:ml-16 p-6 hover:shadow-xl transition-all duration-300 border border-border/50 backdrop-blur-sm">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <item.icon className="text-primary" size={24} />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-foreground">
-                        {item.title}
-                      </h3>
-                      <span className="text-sm text-primary font-mono bg-primary/10 px-2 py-1 rounded">
-                        {item.year}
-                      </span>
+            {journeyItems.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="relative flex items-start mb-12 last:mb-0"
+              >
+                {/* Timeline dot */}
+                <div className="hidden md:flex absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 z-10 transform -translate-x-1/2 mt-6" />
+                
+                <Card className="flex-1 md:ml-16 p-6 hover:shadow-xl transition-all duration-300 border border-border/50 backdrop-blur-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                      <item.icon className="text-primary w-6 h-6" />
                     </div>
                     
-                    <p className="text-lg text-muted-foreground font-medium mb-2">
-                      {item.institution}
-                    </p>
-                    
-                    <p className="text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <span className="text-sm text-primary font-mono bg-primary/10 px-3 py-1 rounded-full mt-2 sm:mt-0 self-start">
+                          {item.year}
+                        </span>
+                      </div>
+                      
+                      <p className="text-lg text-muted-foreground font-medium mb-3">
+                        {item.institution}
+                      </p>
+                      
+                      <p className="text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

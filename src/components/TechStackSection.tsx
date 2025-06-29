@@ -3,47 +3,19 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 
 const TechStackSection = () => {
-  const skillCategories = [
-    {
-      title: 'Programming Languages',
-      skills: [
-        'JavaScript',
-        'Java', 
-        'Python',
-        'Dart',
-        'C'
-      ]
-    },
-    {
-      title: 'Frontend Development',
-      skills: [
-        'React.js',
-        'Flutter',
-        'HTML/CSS',
-        'Tailwind CSS',
-        'Framer Motion'
-      ]
-    },
-    {
-      title: 'Backend Development',
-      skills: [
-        'Node.js',
-        'Express.js',
-        'MongoDB',
-        'MS SQL Server',
-        'Firebase'
-      ]
-    },
-    {
-      title: 'Tools & Technologies',
-      skills: [
-        'Git & GitHub',
-        'Data Structures & Algorithms',
-        'Problem Solving',
-        'API Development',
-        'Package Development'
-      ]
-    }
+  const skills = [
+    { name: 'JavaScript', level: 90 },
+    { name: 'React.js', level: 85 },
+    { name: 'Node.js', level: 80 },
+    { name: 'Flutter', level: 85 },
+    { name: 'Python', level: 75 },
+    { name: 'Java', level: 80 },
+    { name: 'MongoDB', level: 75 },
+    { name: 'Express.js', level: 80 },
+    { name: 'Firebase', level: 70 },
+    { name: 'Git & GitHub', level: 85 },
+    { name: 'Tailwind CSS', level: 90 },
+    { name: 'MS SQL Server', level: 70 }
   ];
 
   const containerVariants = {
@@ -57,23 +29,12 @@ const TechStackSection = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5
-      }
-    }
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3
       }
     }
   };
@@ -101,27 +62,27 @@ const TechStackSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div key={categoryIndex} variants={itemVariants}>
-              <Card className="p-8 h-full border border-border/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                <h3 className="text-2xl font-semibold mb-6 text-foreground border-b border-border/20 pb-3">
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skillIndex}
-                      variants={skillVariants}
-                      whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-muted/50 hover:bg-muted/80 rounded-full border border-border/30 transition-all duration-200 cursor-default"
-                    >
-                      <span className="text-sm font-medium text-foreground">
-                        {skill}
-                      </span>
-                    </motion.div>
-                  ))}
+          {skills.map((skill, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 border border-border/50 backdrop-blur-sm">
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {skill.name}
+                  </h3>
+                  <span className="text-sm text-muted-foreground font-mono">
+                    {skill.level}%
+                  </span>
+                </div>
+                <div className="w-full bg-muted rounded-full h-2">
+                  <motion.div
+                    className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: index * 0.1 }}
+                  />
                 </div>
               </Card>
             </motion.div>
