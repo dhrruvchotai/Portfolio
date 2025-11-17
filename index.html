@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhruv Chotai - Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">DC</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Dhruv Chotai</h1>
+                <h2>Computer Science & Engineering Student | ML Enthusiast</h2>
+                <p>Passionate about building innovative solutions that bridge the gap between machine learning and real-world applications. Currently pursuing my B.Tech while actively developing projects that combine my expertise in AI/ML, mobile app development.</p>
+
+                <!-- <div class="ml-focus">
+                    <h3>🚀 Currently Focused On</h3>
+                    <p>Deep diving into Machine Learning and AI, constantly learning ML algorithms and techniques, reading research papers regularly, heavily practicing on Kaggle, and staying updated with the latest AI/ML technologies and trends.</p>
+                </div> -->
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="mailto:hey.dhruvchotai@gmail.com" target="_blank" aria-label="Email"> <i class="fa-regular fa-envelope fa-lg"></i> </a>
+                    <a href="https://github.com/dhrruvchotai" target="_blank" aria-label="GitHub"> <i class="fa-brands fa-github fa-lg"></i> </a>
+                    <a href="https://x.com/dhrruvchotai" target="_blank" aria-label="Twitter"> <i class="fa-brands fa-x-twitter fa-lg"></i> </a>
+                    <a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn"> <i class="fa-brands fa-linkedin-in fa-lg"></i> </a>
+                    <a href="https://www.kaggle.com/dhruvchotai" target="_blank" aria-label="Kaggle"> <i class="fa-brands fa-kaggle fa-lg"></i> </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="skills-intro">I work with a diverse set of technologies and tools, constantly expanding my skill set to stay at the forefront of software development and machine learning.</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Dart</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>ML & Data Science</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">TensorFlow</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Mobile App Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Dart</span>
+                    <span class="skill-tag">Android</span>
+                    <span class="skill-tag">Play Store</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Sqflite</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3> Tools & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">Kaggle</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-card">
+            <div class="experience-header">
+                <div>
+                    <h3>Flutter Developer Intern</h3>
+                    <p class="company">Digital Guru (Remote)</p>
+                </div>
+                <span class="duration">May 2025 – July 2025</span>
+            </div>
+            <ul>
+                <li>Built a tone generator app that generates AI-powered tones based on user prompts and mood detection.</li>
+                <li>Integrated an AI chatbot for smart prompt generation and general-purpose interactions.</li>
+                <li>Implemented a subscription model with Google Pay (UPI) payment integration to unlock premium features.</li>
+                <li>The app is live on Play Store with 100+ downloads: <a href="https://play.google.com/store/apps/details?id=com.tone.generator&hl=en_US" target="_blank" rel="noopener" class="project-link">Play Store Link →</a></li>
+            </ul>
+            <span class="highlight-badge">Live on Play Store • 100+ Downloads</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Crystal Data</h3>
+                    <p>Developing a Python-based web app using Streamlit where users can upload CSV files to generate detailed dataset reports, perform various data cleaning operations, and visualize data through charts. Supports data encoding, scaling,
+                        and more. Currently under active development.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Streamlit</span>
+                    </div>
+                    <a href="https://github.com/dhrruvchotai/crystal-data" target="_blank" rel="noopener" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>AI Sound - Tone Generator App</h3>
+                    <p>Built a tone generator app that generates AI-powered tones based on user prompts and mood detection. Integrated an AI chatbot for smart prompt generation and general-purpose interactions. Implemented a subscription model with Google
+                        Pay (UPI) payment integration to unlock premium features. The app is live on Play Store with 100+ downloads.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Dart</span>
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Google Pay</span>
+                    </div>
+                    <span class="highlight-badge">100+ Downloads on Play Store</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.tone.generator&hl=en_US" target="_blank" rel="noopener" class="project-link">View on Play Store →</a>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>ML Based Personal Finance Optimizer</h3>
+                    <p>Built a comprehensive financial management application with ML powered bill scanning, spending analysis, and predictive insights. Features include real-time transaction tracking, smart bill recognition, interactive analytics, and personalized
+                        financial forecasts.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                    <a href="https://github.com/dhrruvchotai/ml-finance-optimizer" target="_blank" rel="noopener" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>No Code API Connector</h3>
+                    <p>Created and published a No Code API Connector package on pub.dev with 200+ downloads. Simplifies RESTful API integration with support for authentication, JSON-based configuration, and request/response handling.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Dart</span>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <span class="highlight-badge">300+ Downloads on pub.dev</span>
+                    <a href="https://pub.dev/packages/no_code_api_connector" target="_blank" rel="noopener" class="project-link">View on pub.dev →</a>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Friday - Voice Assistant</h3>
+                    <p>Developed a Python-based voice assistant capable of generating images, playing songs, searching the web, managing to-do lists and performing various other tasks.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">pyttsx3</span>
+                        <span class="tech-badge">pywhatkit</span>
+                        <span class="tech-badge">speech-recognition</span>
+                    </div>
+                    <a href="https://github.com/dhrruvchotai/friday-voice-assistant" target="_blank" rel="noopener" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <p class="university">Darshan University, Rajkot</p>
+                </div>
+                <span class="duration">2023 – Present</span>
+            </div>
+            <!-- <div class="education-details">
+                    <span class="cgpa">9.06 CGPA</span>
+                </div> -->
+        </div>
+        <br>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3>Higher Secondary - 12th</h3>
+                    <p class="university">Modi School, Rajkot</p>
+                </div>
+                <span class="duration">2021 - 2023</span>
+            </div>
+        </div>
+        <br>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3>Secondary - 10th</h3>
+                    <p class="university">Parishram School, Bhanvad</p>
+                </div>
+                <span class="duration">2020</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <h3>Have a project in mind or want to collaborate? Feel free to reach out — I’m always open to discussing new ideas, opportunities, and challenges.</h3>
+            <div class="social-links">
+                <a href="mailto:hey.dhruvchotai@gmail.com" target="_blank" aria-label="Email"> <i class="fa-regular fa-envelope fa-lg"></i> </a>
+                <a href="https://github.com/dhrruvchotai" target="_blank" aria-label="GitHub"> <i class="fa-brands fa-github fa-lg"></i> </a>
+                <a href="https://x.com/dhrruvchotai" target="_blank" aria-label="Twitter"> <i class="fa-brands fa-x-twitter fa-lg"></i> </a>
+                <a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn"> <i class="fa-brands fa-linkedin-in fa-lg"></i> </a>
+                <a href="https://www.kaggle.com/dhruvchotai" target="_blank" aria-label="Kaggle"> <i class="fa-brands fa-kaggle fa-lg"></i> </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dhruv Chotai. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
