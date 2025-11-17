@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.icon {
+    width: 60px;        
+    height: 60px;
+    border-radius: 50%;   
+    object-fit: cover;   
+}
+
  :root {
     --bg-primary: #ffffff;
     --bg-secondary: #f8f9fa;
