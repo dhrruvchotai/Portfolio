@@ -278,6 +278,14 @@ section.visible {
     color: var(--bg-primary);
 }
 
+.resume-button{
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+}
+
+.resume-button i{
+    margin-right: 6px;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -389,11 +397,13 @@ section.visible {
     padding: 2.5rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-primary);
     transition: all 0.3s ease;
 }
 
 .experience-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) translateX(5px);
+    border-left: 6px solid var(--accent);
     box-shadow: 0 10px 30px var(--card-shadow);
 }
 
@@ -465,14 +475,16 @@ section.visible {
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-primary);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateX(5px);
     box-shadow: 0 15px 40px var(--card-shadow);
+    border-left: 6px solid var(--accent);
 }
 
 .project-content {
@@ -529,12 +541,15 @@ section.visible {
     padding: 2.5rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-primary);
     transition: all 0.3s ease;
 }
 
 .education-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) translateX(5px);
     box-shadow: 0 10px 30px var(--card-shadow);
+    border-left: 6px solid var(--accent);
+    transition: all 0.3s ease;
 }
 
 .education-header {

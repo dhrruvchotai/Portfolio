@@ -88,7 +88,7 @@ function highlightActiveLink() {
 
     pageSections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 80; // sensitivity
+        const sectionTop = section.offsetTop - 80;
         const id = section.getAttribute("id");
 
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -100,4 +100,4 @@ function highlightActiveLink() {
 }
 
 window.addEventListener("scroll", highlightActiveLink);
-highlightActiveLink(); // Initialize on page load
+highlightActiveLink();
