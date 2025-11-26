@@ -218,29 +218,63 @@ section.visible {
     line-height: 1.7;
 }
 
-.ml-focus {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    margin: 2rem auto;
-    border-radius: 1rem;
-    max-width: 700px;
-    text-align: center;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 20px var(--card-shadow);
+.learning-section {
+    margin-top: 3rem;
+    width: 100%;
 }
 
-.ml-focus h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
+.learning-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
     font-weight: 600;
+    text-align: center;
 }
 
-.ml-focus p {
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.learning-card {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 5px 15px var(--card-shadow);
+}
+
+.learning-card i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.learning-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.7;
+}
+
+.learning-card p {
+    font-size: 0.85rem;
     color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
 }
 
 .cta-buttons {
